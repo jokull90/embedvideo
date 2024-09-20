@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        #videoContainer { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #000; }
+        #videoPlayer { max-width: 100%; max-height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <video id="videoPlayer" controls>
+            <source src="https://https://getwhy.io/api/v1/media/serve/d3bb0c64-ca80-496b-b37c-3f72cf916550.mp4?angle=combined&revision=0" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        document.getElementById('videoPlayer').addEventListener('loadedmetadata', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+    </script>
+</body>
+</html>
